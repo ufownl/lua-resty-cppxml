@@ -237,5 +237,23 @@ int luaopen_resty_cppxml(lua_State* L) {
     {nullptr, nullptr}
   };
   luaL_register(L, "cppxml", reg);
+#define regist_type(L, t) do { \
+  lua_pushstring(L, #t); \
+  lua_pushinteger(L, static_cast<int>(rapidxml::node_##t)); \
+  lua_settable(L, -3); \
+} while (false)
+  lua_pushstring(L, "node_type");
+  lua_newtable(L); {
+    regist_type(L, document);
+    regist_type(L, element);
+    regist_type(L, data);
+    regist_type(L, cdata);
+    regist_type(L, comment);
+    regist_type(L, declaration);
+    regist_type(L, doctype);
+    regist_type(L, pi);
+  }
+  lua_settable(L, -3);
+#undef regist_type
   return 1;
 }
