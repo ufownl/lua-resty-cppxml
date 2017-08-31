@@ -1,0 +1,59 @@
+{
+  "children": [
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "three",
+          "attributes": [
+            {
+              "value": "five",
+              "name": "four"
+            },
+            {
+              "value": "six",
+              "name": "four"
+            }
+          ],
+          "type": 1
+        },
+        {
+          "children": [
+            {
+              "value": "eight",
+              "type": 2
+            }
+          ],
+          "name": "three",
+          "attributes": [],
+          "type": 1
+        },
+        {
+          "children": [
+            {
+              "value": "twelve",
+              "type": 2
+            }
+          ],
+          "name": "nine",
+          "attributes": [
+            {
+              "value": "eleven",
+              "name": "ten"
+            }
+          ],
+          "type": 1
+        }
+      ],
+      "name": "test",
+      "attributes": [
+        {
+          "value": "two",
+          "name": "one"
+        }
+      ],
+      "type": 1
+    }
+  ],
+  "type": 0
+}
