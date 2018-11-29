@@ -2,6 +2,12 @@
 
 Convert xml string to lua table or reverse convert lua table to xml string.
 
+## Install
+
+```
+cmake . && make && make install
+```
+
 ## Usage
 
 XML -> lua table:
@@ -90,4 +96,5 @@ local tbl = {
   -- Assume the value of `tbl` is equal the value above.
 }
 local str = xml.encode(tbl)
+local str_without_indent = xml.encode(tbl, 1)
 ```

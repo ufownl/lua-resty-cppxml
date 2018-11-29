@@ -194,10 +194,13 @@ void to_lua(lua_State* L, rapidxml::xml_node<>* node) {
 }
 
 int cppxml_encode(lua_State* L) {
+  size_t len = lua_gettop(L);
+  int flag = lua_tointeger(L, len);
+  lua_pop(L, len - 1);
   rapidxml::xml_document<> doc;
   to_xml(L, 1, doc);
   std::vector<char> buf;
-  rapidxml::print(std::back_inserter(buf), doc);
+  rapidxml::print(std::back_inserter(buf), doc, flag);
   lua_pushlstring(L, buf.data(), buf.size());
   return 1;
 }
